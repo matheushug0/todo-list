@@ -23,7 +23,7 @@ API elaborada a partir de um projeto desenvolvido no [YOUTUBE](https://youtu.be/
 
 - SOLID, DRY, YAGNI, KISS
 - API REST
-- Consultas com Spring Data JPA
+- Persistência e Consultas de Dados com Spring Data JPA
 - Injeção de Dependências
 - Tratamento de respostas de erro
 - Geração automática do Swagger com a OpenAPI 3
