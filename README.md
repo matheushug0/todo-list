@@ -3,15 +3,14 @@
 </h1>
 
 <p align="center">
- <img src="https://img.shields.io/static/v1?label=Projeto&message=Java&color=8257E5&labelColor=000000" alt="Java" />
+ <img src="https://img.shields.io/static/v1?label=Project&message=Java&color=8257E5&labelColor=000000" alt="Java" />
 </p>
 
-API para gerenciar tarefas (
-CRUD) [Baseado no desafio](https://github.com/simplify-liferay/desafio-junior-backend-simplify) Back-end - Simplify.
+API for managing tasks (CRUD) [Based on the challenge](https://github.com/simplify-liferay/desafio-junior-backend-simplify) Back-end - Simplify.
 
-API elaborada a partir de um projeto desenvolvido no [YOUTUBE](https://youtu.be/IjProDV001o).
+API developed from a project created on [YOUTUBE](https://youtu.be/IjProDV001o).
 
-## Tecnologias
+## Technologies
 
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Spring MVC](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
@@ -19,26 +18,25 @@ API elaborada a partir de um projeto desenvolvido no [YOUTUBE](https://youtu.be/
 - [SpringDoc OpenAPI 3](https://springdoc.org/v2/#spring-webflux-support)
 - [MySQL](https://dev.mysql.com/downloads/)
 
-## Práticas adotadas
+## Adopted Practices
 
 - SOLID, DRY, YAGNI, KISS
-- API REST
-- Persistência e Consultas de Dados com Spring Data JPA
-- Injeção de Dependências
-- Tratamento de respostas de erro
-- Geração automática do Swagger com a OpenAPI 3
+- REST API
+- Data Persistence and Queries with Spring Data JPA
+- Dependency Injection
+- Error response handling
+- Automatic Swagger generation with OpenAPI 3
 
-## Como Executar
+## How to Run
 
-- Clonar repositório git
-- Construir o projeto:
-
+- Clone the git repository
+- Build the project:
 ```
 $ ./mvnw clean package
 ```
-- Configure o arquivo `src/main/resources/aplication.properties.example`
-  - renomeie para `aplication.properties`
-  - defina o `username` e `password` do seu MySQL: 
+- Configure the `src/main/resources/aplication.properties.example` file:
+  - Rename it to `aplication.properties`
+  - Set your MySQL `username` and `password`:
 
 ```
 spring.application.name=desafio-todolist
@@ -50,59 +48,58 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-- Executar a aplicação:
+- Run the Application:
 
 ```
 $ java -jar target/desafio-todolist-0.0.1-SNAPSHOT.jar
 ```
 
-A API poderá ser acessada em [localhost:8080](http://localhost:8080).
+The API can be accessed at [localhost:8080](http://localhost:8080).
 
 ## API Endpoints
 
-Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [Postman](https://www.postman.com/):
+To make the HTTP requests below, the [Postman](https://www.postman.com/) tool was used:
 
-- Criar Tarefa
-
+- Create Task
 ```
 $ [POST] http://localhost:8080/todos
 
   {
-    "title": "Título da Tarefa",
-    "description": "Descrição da Tarefa",
+    "title": "Task Title",
+    "description": "Task Description",
     "done": false,
     "priority": 1
   }
 ```
 
-- Retorno do Método
+- Method Return
   <img src="files/endpoint_post.jpg">
 
 
-- Listar Tarefas
+- List Tasks
 
 ```
 $ [GET] http://localhost:8080/todos
 ```
 
 
-- Atualizar Tarefa
+- Update task
 
 ```
 $ [PUT] http://localhost:8080/todos
    {
     "id": 6,
-    "title": "Título da Tarefa Alterado",
-    "description": "Descrição da Tarefa Alterada",
+    "title": "Task Title Updated",
+    "description": "Task Description Updated",
     "done": true,
     "priority": 10
    }
 ```
-- Retorno do Método
+- Method Return
 <img src="/files/endpoint_put.jpg">
 
 
-- Remover Tarefa
+- Remove Task
 
 ```
 [DELETE] http://localhost:8080/todos/{id}
